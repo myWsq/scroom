@@ -1,0 +1,14 @@
+{
+    "name": "scroom",
+    "version": "0.0.0",
+    "description": "A smart library for cool scrolling effects, based on Intersection API.",
+    "author": "myWsq <wsq961@outlook.com>",
+    "license": "MIT",
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "scripts": {
+        "test": "echo \"Error: run tests from root\" && exit 1"
+    }
+}
