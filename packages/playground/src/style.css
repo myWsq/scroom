@@ -1,0 +1,18 @@
+.target {
+  display: flex;
+  height: 100vh;
+}
+
+.placeholder {
+  height: 100vh;
+}
+
+.target.a > .rect {
+  background: red;
+  height: 300px;
+  width: 300px;
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+}

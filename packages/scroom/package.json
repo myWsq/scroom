@@ -21,6 +21,7 @@
         "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,css,md}\""
     },
     "devDependencies": {
+        "@types/randomcolor": "^0.5.5",
         "@typescript-eslint/eslint-plugin": "^4.9.0",
         "@typescript-eslint/parser": "^4.9.0",
         "eslint": "^7.14.0",
@@ -39,5 +40,9 @@
     "lint-staged": {
         "*.{ts,tsx}": "eslint --cache --fix",
         "*.{ts,tsx,css,md}": "prettier --write"
+    },
+    "dependencies": {
+        "randomcolor": "^0.6.2",
+        "resize-observer-polyfill": "^1.5.1"
     }
 }

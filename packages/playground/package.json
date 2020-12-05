@@ -1,5 +1,14 @@
 {
   "name": "playground",
   "private": true,
-  "author": "myWsq <wsq961@outlook.com>"
+  "author": "myWsq <wsq961@outlook.com>",
+  "scripts": {
+    "dev": "parcel src/index.html"
+  },
+  "devDependencies": {
+    "parcel": "^1.12.4"
+  },
+  "dependencies": {
+    "scroom": "^0.0.0"
+  }
 }
