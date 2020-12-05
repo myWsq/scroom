@@ -1,6 +1,7 @@
 {
-  "name": "playground",
+  "name": "website",
   "private": true,
+  "version": "0.1.0",
   "author": "myWsq <wsq961@outlook.com>",
   "scripts": {
     "dev": "parcel src/index.html"
@@ -10,6 +11,5 @@
   },
   "dependencies": {
     "scroom": "^0.1.0"
-  },
-  "version": "0.1.0"
+  }
 }
