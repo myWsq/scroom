@@ -1,6 +1,6 @@
 {
   "name": "@scroom/react",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "> TODO: description",
   "author": "myWsq <wsq961@outlook.com>",
   "homepage": "",
@@ -22,6 +22,6 @@
   },
   "gitHead": "e064a71a38a8f63f0a1fa61bdea2fc86f6e4bb3b",
   "dependencies": {
-    "scroom": "^0.0.0"
+    "scroom": "^0.1.0"
   }
 }

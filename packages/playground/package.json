@@ -9,6 +9,7 @@
     "parcel": "^1.12.4"
   },
   "dependencies": {
-    "scroom": "^0.0.0"
-  }
+    "scroom": "^0.1.0"
+  },
+  "version": "0.1.0"
 }
