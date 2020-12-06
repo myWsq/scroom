@@ -29,14 +29,14 @@ debug(sc)
       });
       debug(sc);
       return () => {
-          sc.destory()
-      }
+        sc.destory();
+      };
     }, []);
     return <div ref={ref} style={{ height: "300px" }} />;
   }}
 </Playground>
 
-<br/>
+<br />
 
 You can also provide a debug ID.
 

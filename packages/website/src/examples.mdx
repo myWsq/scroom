@@ -38,7 +38,7 @@ Scroom is easy to use, what you achieve is up to your imagination.
   }}
 </Playground>
 
-<br/>
+<br />
 
 ## With Sticky Position
 
@@ -46,37 +46,39 @@ Scroom is easy to use, what you achieve is up to your imagination.
   {() => {
     const ref = React.useRef();
     const [style, setStyle] = React.useState({
-        radius: 0,
-        height: 150,
-        transform: ''
+      radius: 0,
+      height: 150,
+      transform: "",
     });
     React.useEffect(() => {
       const sc = setup({
         target: ref.current,
       });
       sc.onProgress((progress) => {
-          setStyle({
-            radius: style.radius + 300 * progress,
-            height: style.height + 150 * progress,
-            transform: `translateY(${-50 * progress}%)`
-          })
+        setStyle({
+          radius: style.radius + 300 * progress,
+          height: style.height + 150 * progress,
+          transform: `translateY(${-50 * progress}%)`,
+        });
       });
       return () => {
         sc.destory();
       };
     }, []);
     return (
-      <div ref={ref} style={{ height: '800px' }}>
-        <div style={{
-            position: 'sticky',
-            top: '50%',
-            margin: '0 auto',
-            width: '300px',
-            background: '#96E75D',
-            height: style.height + 'px',
-            borderRadius: style.radius + 'px',
-            transform: style.transform
-        }}/>
+      <div ref={ref} style={{ height: "800px" }}>
+        <div
+          style={{
+            position: "sticky",
+            top: "50%",
+            margin: "0 auto",
+            width: "300px",
+            background: "#96E75D",
+            height: style.height + "px",
+            borderRadius: style.radius + "px",
+            transform: style.transform,
+          }}
+        />
       </div>
     );
   }}

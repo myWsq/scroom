@@ -8,6 +8,7 @@ Thumbs.db
 *.sublime-workspace
 *.log
 yarn.lock
+package-lock.json
 .eslintcache
 dist
 .docz
