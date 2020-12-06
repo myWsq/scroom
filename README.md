@@ -4,7 +4,7 @@
 
 Scroom is a smart library for cool scrolling effects, based on Intersection Observer.
 
-[Check Documentation and examples.](https://scroom-site.netlify.app)
+[Check Documentation and examples.](http://scroom.wsq.cool/)
 
 ## Features
 
