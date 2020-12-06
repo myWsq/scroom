@@ -1,0 +1,49 @@
+---
+name: Debug
+route: /debug
+---
+
+import { Playground } from "docz";
+import { setup, debug } from "scroom";
+
+# Debug
+
+The debug tool of Scroom can help you locate the problem quickly.
+
+```js
+import { setup, debug } from "scroom";
+
+const sc = setup(...);
+
+debug(sc)
+```
+
+## Example
+
+<Playground>
+  {() => {
+    const ref = React.useRef();
+    React.useEffect(() => {
+      const sc = setup({
+        target: ref.current,
+      });
+      debug(sc);
+      return () => {
+          sc.destory()
+      }
+    }, []);
+    return <div ref={ref} style={{ height: "300px" }} />;
+  }}
+</Playground>
+
+<br/>
+
+You can also provide a debug ID.
+
+```js
+debug(sc, "your-id");
+```
+
+## Important
+
+It is not recommended to use debug tool in a production environment. It will affect performance and bundle size.

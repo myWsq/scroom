@@ -1,0 +1,65 @@
+---
+name: API Reference
+route: /api
+---
+
+## Options
+
+The options you provided when setup Scroom.
+
+```ts
+const sc = setup({
+  target: Element, // Required. Target element to be detected.
+  offset: number, // Default: 0.5 (%). How far from the top of the viewport to detect. (default is middle of sceen)
+  threshold: // Default: 0.01 (%). Progress step, indicates the frequency of detecting.
+});
+```
+
+<br />
+
+## Methods
+
+Methods of Scroom instance.
+
+```ts
+sc.onEnter((el: Element) => void)
+```
+
+Callback that fires when the top or bottom edge of a step element enters the offset threshold.
+
+**Params**:
+
+- el: Target Element
+
+<br />
+
+```ts
+sc.onLeave((el: Element) => void)
+```
+
+Callback that fires when the top or bottom edge of a step element leaves the offset threshold.
+
+**Params**:
+
+- el: Target Element
+
+<br />
+
+```ts
+sc.onProgress((progress: number, el: Element) => void)
+```
+
+Callback that fires the progress (0 - 1) a step has made through the threshold.
+
+**Params**:
+
+- progress: The percent of completion of the step (0 - 1)
+- el: Target Element
+
+<br />
+
+```ts
+sc.destory();
+```
+
+Removes all observers and callback functions.

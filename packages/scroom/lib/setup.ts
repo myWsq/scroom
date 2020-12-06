@@ -112,7 +112,8 @@ export function setup<T extends Element>(options: ScroomOptions<T>) {
 
         if (onProgressCallback && (isEntering || isLeaving)) {
           onProgressCallback(getClosest(progress, 0, 1), target);
-        } else if (onProgressCallback && isIntersecting) {
+        }
+        if (onProgressCallback && isIntersecting) {
           onProgressCallback(progress, target);
         }
 

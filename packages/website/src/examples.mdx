@@ -1,0 +1,83 @@
+---
+name: Examples
+route: /examples
+---
+
+import { Playground } from "docz";
+import { setup } from "scroom";
+
+# Examples
+
+Scroom is easy to use, what you achieve is up to your imagination.
+
+<br />
+
+## Basic
+
+<Playground>
+  {() => {
+    const ref = React.useRef();
+    const [colors, setColors] = React.useState([0, 0, 0]);
+    React.useEffect(() => {
+      const sc = setup({
+        target: ref.current,
+      });
+      sc.onProgress((progress) => {
+        setColors([
+          colors[0] + progress * 60,
+          colors[1] + progress * 80,
+          colors[2] + progress * 250,
+        ]);
+      });
+      return () => {
+        sc.destory();
+      };
+    }, []);
+    const background = `rgb(${colors[0]}, ${colors[1]}, ${colors[2]})`;
+    return <div ref={ref} style={{ height: "300px", background }} />;
+  }}
+</Playground>
+
+<br/>
+
+## With Sticky Position
+
+<Playground>
+  {() => {
+    const ref = React.useRef();
+    const [style, setStyle] = React.useState({
+        radius: 0,
+        height: 150,
+        transform: ''
+    });
+    React.useEffect(() => {
+      const sc = setup({
+        target: ref.current,
+      });
+      sc.onProgress((progress) => {
+          setStyle({
+            radius: style.radius + 300 * progress,
+            height: style.height + 150 * progress,
+            transform: `translateY(${-50 * progress}%)`
+          })
+      });
+      return () => {
+        sc.destory();
+      };
+    }, []);
+    return (
+      <div ref={ref} style={{ height: '800px' }}>
+        <div style={{
+            position: 'sticky',
+            top: '50%',
+            margin: '0 auto',
+            width: '300px',
+            background: '#96E75D',
+            height: style.height + 'px',
+            borderRadius: style.radius + 'px',
+            transform: style.transform
+        }}/>
+      </div>
+    );
+  }}
+</Playground>
