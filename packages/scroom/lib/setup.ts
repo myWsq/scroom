@@ -131,7 +131,7 @@ export function setup<T extends Element>(options: ScroomOptions<T>) {
         isIntersectingLastTrigger = isIntersecting;
       },
       {
-        rootMargin: `${-offsetTop}px 0px ${-offsetBottom}px 0px`,
+        rootMargin: `${-offsetTop}px 0px ${-offsetBottom + 10}px 0px`,
         threshold: genRange(0, 1, threshold),
       },
     );
