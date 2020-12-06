@@ -1,7 +1,6 @@
-![logo](./logo.png) 
+![logo](./logo.png)
 
-![npm](https://img.shields.io/npm/v/scroom)
-[![GitHub Repo stars](https://img.shields.io/github/stars/myWsq/scroom?style=social)](https://github.com/myWsq/scroom)
+![npm](https://img.shields.io/npm/v/scroom) [![Netlify Status](https://api.netlify.com/api/v1/badges/c2aef5c9-9162-43c1-96d6-e6c1884f92f4/deploy-status)](https://app.netlify.com/sites/scroom-site/deploys)
 
 Scroom is a smart library for cool scrolling effects, based on Intersection Observer.
 
