@@ -4,6 +4,11 @@
     "description": "A smart library for cool scrolling effects, based on Intersection API.",
     "author": "myWsq <wsq961@outlook.com>",
     "license": "MIT",
+    "homepage": "https://scroom-site.netlify.app",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/myWsq/scroom.git"
+    },
     "source": "main.ts",
     "types": "dist/main.d.ts",
     "main": "dist/scroom.js",
