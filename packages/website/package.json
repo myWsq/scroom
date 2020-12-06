@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "author": "myWsq <wsq961@outlook.com>",
   "scripts": {
-    "dev": "docz dev"
+    "dev": "docz dev",
+    "deploy": "docz build"
   },
   "dependencies": {
     "docz": "^2.3.1",

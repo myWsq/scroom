@@ -1,8 +1,9 @@
 export default {
   menu: ["Introduction", "API Reference", "Debug", "Examples"],
-  typescript: true,
   title: "Scroom",
-  description: "A smart library for cool scrolling effects, based on Intersection Observer.",
+  description:
+    "A smart library for cool scrolling effects, based on Intersection Observer.",
+  dest: "/dist",
   public: "/public",
   themeConfig: {
     initialColorMode: "dark",
