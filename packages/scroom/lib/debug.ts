@@ -1,7 +1,7 @@
 import { ScroomInstance } from './setup';
 import randomColor from 'randomcolor';
 
-export function debug(instance: ScroomInstance, id: string) {
+export function debug(instance: ScroomInstance, id?: string) {
   const r = (randomColor({
     luminosity: 'dark',
     format: 'rgbArray',
@@ -36,8 +36,6 @@ export function debug(instance: ScroomInstance, id: string) {
     overflow: hidden;
   `;
 
-  mask.innerText = id;
-
   document.body.appendChild(offsetLine);
   document.body.appendChild(mask);
 
@@ -51,7 +49,7 @@ export function debug(instance: ScroomInstance, id: string) {
     mask.style.width = rect.width + 'px';
     mask.style.height = rect.height + 'px';
 
-    mask.innerText = `[${id}] ${(progress * 100).toFixed(3)}%`
+    mask.innerText = `${id ? `[${id}]` : ''}  ${(progress * 100).toFixed(3)}%`;
 
     if (action === 'enter') {
       offsetLine.style.opacity = '1';
