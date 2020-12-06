@@ -1,7 +1,7 @@
 {
   "name": "website",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "myWsq <wsq961@outlook.com>",
   "scripts": {
     "dev": "docz dev",
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "docz": "^2.3.1",
-    "scroom": "^0.1.0",
+    "scroom": "^0.2.0",
     "theme-ui": "^0.2.52"
   }
 }
