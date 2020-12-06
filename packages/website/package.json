@@ -5,7 +5,7 @@
   "author": "myWsq <wsq961@outlook.com>",
   "scripts": {
     "dev": "docz dev",
-    "deploy": "docz build"
+    "build": "docz build"
   },
   "dependencies": {
     "docz": "^2.3.1",
