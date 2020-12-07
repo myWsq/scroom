@@ -1,5 +1,3 @@
-import ResizeObserver from 'resize-observer-polyfill';
-
 export interface ScroomOptions<T extends Element> {
   target: T;
   offset?: number;
@@ -17,14 +15,14 @@ export type DebugCallback = (info: {
 }) => void;
 
 function genRange(start: number, stop: number, step = 1) {
-  return Array(Math.ceil((stop - start) / step))
+  const range = Array(Math.ceil((stop - start) / step))
     .fill(start)
     .map((x, y) => x + y * step);
+  if (range[range.length - 1] !== stop) {
+    range.push(stop);
+  }
+  return range;
 }
-
-const getClosest = (goal: number, ...counts: number[]) => {
-  return counts.reduce((prev, curr) => (Math.abs(curr - goal) < Math.abs(prev - goal) ? curr : prev));
-};
 
 export function setup<T extends Element>(options: ScroomOptions<T>) {
   // ---------------------------------------------------------------------------
@@ -59,35 +57,11 @@ export function setup<T extends Element>(options: ScroomOptions<T>) {
   }
 
   // ---------------------------------------------------------------------------
-  // Observing size
-  // ---------------------------------------------------------------------------
-  let targetHeight = target.clientHeight;
-  let rootHeight = window.innerHeight;
-
-  function windowSizeListener() {
-    rootHeight = window.innerHeight;
-    initIntersectionObserver();
-  }
-  window.addEventListener('resize', windowSizeListener);
-
-  let resizeObserver: ResizeObserver | null;
-
-  resizeObserver = new ResizeObserver((entires) => {
-    targetHeight = entires[0].contentRect.height;
-    initIntersectionObserver();
-  });
-
-  resizeObserver.observe(target);
-
-  // ---------------------------------------------------------------------------
   // Observing intersection
   // ---------------------------------------------------------------------------
   let intersectionObserver: IntersectionObserver | null = null;
 
   function initIntersectionObserver() {
-    const offsetTop = rootHeight * offset;
-    const offsetBottom = rootHeight - offsetTop - targetHeight;
-
     let isIntersectingLastTrigger = false;
 
     if (intersectionObserver) {
@@ -97,7 +71,10 @@ export function setup<T extends Element>(options: ScroomOptions<T>) {
     intersectionObserver = new IntersectionObserver(
       (entires) => {
         const intersection = entires[0];
-        const isIntersecting = Math.abs(intersection.intersectionRect.y - offsetTop) <= 1;
+        const rootBounds = intersection.rootBounds || false;
+        const isIntersecting =
+          intersection.isIntersecting && rootBounds && intersection.intersectionRect.y <= rootBounds.y;
+
         const isEntering = !isIntersectingLastTrigger && isIntersecting;
         const isLeaving = isIntersectingLastTrigger && !isIntersecting;
         const progress = 1 - intersection.intersectionRatio;
@@ -110,10 +87,7 @@ export function setup<T extends Element>(options: ScroomOptions<T>) {
           onLeaveCallback(target);
         }
 
-        if (onProgressCallback && (isEntering || isLeaving)) {
-          onProgressCallback(getClosest(progress, 0, 1), target);
-        }
-        if (onProgressCallback && isIntersecting) {
+        if (onProgressCallback) {
           onProgressCallback(progress, target);
         }
 
@@ -122,7 +96,7 @@ export function setup<T extends Element>(options: ScroomOptions<T>) {
           if (action) {
             debugCallback({
               progress,
-              offsetTop,
+              offsetTop: offset,
               intersection,
               action,
             });
@@ -132,7 +106,9 @@ export function setup<T extends Element>(options: ScroomOptions<T>) {
         isIntersectingLastTrigger = isIntersecting;
       },
       {
-        rootMargin: `${-offsetTop}px 0px ${-offsetBottom + 10}px 0px`,
+        // The size of the root must be large enough so that the second intersection will not be triggered.
+        // It a hack but useful.
+        rootMargin: `${-offset * 100}% 0% 9999999% 0%`,
         threshold: genRange(0, 1, threshold),
       },
     );
@@ -146,15 +122,7 @@ export function setup<T extends Element>(options: ScroomOptions<T>) {
     if (intersectionObserver) {
       intersectionObserver.disconnect();
     }
-    if (resizeObserver) {
-      resizeObserver.disconnect();
-    }
-
-    if (windowSizeListener) {
-      window.removeEventListener('resize', windowSizeListener);
-    }
     intersectionObserver = null;
-    resizeObserver = null;
     onProgressCallback = null;
     onEnterCallback = null;
     onLeaveCallback = null;

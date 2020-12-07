@@ -42,7 +42,7 @@ export function debug(instance: ScroomInstance, id?: string) {
   instance.debug(({ intersection, offsetTop, action, progress }) => {
     const rect = intersection.boundingClientRect;
 
-    offsetLine.style.top = offsetTop + 'px';
+    offsetLine.style.top = offsetTop * 100 + '%';
 
     mask.style.top = rect.top + 'px';
     mask.style.left = rect.left + 'px';
