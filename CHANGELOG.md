@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [0.2.0](https://github.com/myWsq/scroom/compare/v0.0.0...v0.2.0) (2020-12-06)
+# [0.3.0](https://github.com/myWsq/scroom/compare/v0.0.0...v0.3.0) (2020-12-07)
 
 
 ### Bug Fixes
@@ -17,12 +17,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * base func and debug complete. ([adf451f](https://github.com/myWsq/scroom/commit/adf451f48f5d343f74b6d44902bf83074351c676))
 
 
+### Performance Improvements
 
-
-
-# [0.1.0](https://github.com/myWsq/scroom/compare/v0.0.0...v0.1.0) (2020-12-05)
-
-
-### Features
-
-* base func and debug complete. ([adf451f](https://github.com/myWsq/scroom/commit/adf451f48f5d343f74b6d44902bf83074351c676))
+* remove resize observer ! ([c65ff2f](https://github.com/myWsq/scroom/commit/c65ff2f7f9a7ce5abcac3aaae6a978fecbc67fae))

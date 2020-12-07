@@ -1,6 +1,6 @@
 {
     "name": "scroom",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "description": "A smart library for cool scrolling effects, based on Intersection API.",
     "author": "myWsq <wsq961@outlook.com>",
     "license": "MIT",
