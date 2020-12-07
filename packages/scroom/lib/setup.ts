@@ -73,7 +73,10 @@ export function setup<T extends Element>(options: ScroomOptions<T>) {
         const intersection = entires[0];
         const rootBounds = intersection.rootBounds || false;
         const isIntersecting =
-          intersection.isIntersecting && rootBounds && intersection.intersectionRect.y <= rootBounds.y;
+          intersection.isIntersecting &&
+          rootBounds &&
+          intersection.intersectionRect.y <= rootBounds.y &&
+          intersection.intersectionRatio !== 1;
 
         const isEntering = !isIntersectingLastTrigger && isIntersecting;
         const isLeaving = isIntersectingLastTrigger && !isIntersecting;
