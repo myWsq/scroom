@@ -16,4 +16,5 @@ export default {
     initialColorMode: "dark",
     showDarkModeSwitch: false,
   },
+  ignore: ["CHANGELOG.md"],
 };
