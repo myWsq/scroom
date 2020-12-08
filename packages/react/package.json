@@ -1,0 +1,38 @@
+{
+    "name": "@scroom/react",
+    "version": "0.3.0",
+    "description": "React hooks for scroom.",
+    "author": "myWsq <wsq961@outlook.com>",
+    "license": "MIT",
+    "homepage": "https://scroom.wsq.cool",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/myWsq/scroom.git"
+    },
+    "source": "main.ts",
+    "types": "dist/main.d.ts",
+    "main": "dist/scroom-react.js",
+    "module": "dist/scroom-react.m.js",
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "scripts": {
+        "dev": "microbundle watch  -f es,cjs --no-compress",
+        "build": "microbundle -f es,cjs --no-compress"
+    },
+    "devDependencies": {
+        "@types/react": "^16.8.0",
+        "microbundle": "^0.12.4",
+        "react": "^16.8.0",
+        "react-dom": "^16.8.0",
+        "typescript": "^3.9.7"
+    },
+    "dependencies": {
+        "scroom": "^0.3.0"
+    },
+    "peerDependencies": {
+        "react": ">=16.8.0",
+        "react-dom": ">=16.8.0"
+    }
+}
