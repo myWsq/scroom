@@ -60,4 +60,14 @@ export function debug(instance: ScroomInstance, id?: string) {
       mask.style.opacity = '0';
     }
   });
+
+  function destroy() {
+    instance.debug(null);
+    offsetLine.remove();
+    mask.remove();
+  }
+
+  return {
+    destroy,
+  };
 }
