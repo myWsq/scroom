@@ -1,0 +1,41 @@
+---
+name: Usage with React
+route: /usage-with-react/
+---
+
+import { Playground } from "docz";
+import { useScroom } from "@scroom/react";
+
+# Usage with React
+
+@scroom/react provides hooks to simplify usage.
+
+<br />
+
+## Installation
+
+```shell
+$ npm install @scroom/react
+```
+
+## Usage
+
+```js
+import { useScroom } from "@scroom/react";
+import { useRef } from "react";
+function App() {
+  const ref = useRef();
+  const sc = useScroom(ref);
+  return <div ref={ref}>...</div>;
+}
+```
+
+## Example
+
+<Playground>
+  {() => {
+    const ref = React.useRef();
+    return <div ref={ref}>hello</div>;
+}}
+
+</Playground>

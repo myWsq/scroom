@@ -1,21 +1,22 @@
 // @jsx jsx
 import { Box, jsx } from "theme-ui";
-import { setup } from "scroom";
 import { useEffect, useRef } from "react";
+import { useScroom } from "@scroom/react";
+
 export default function Logo() {
   const ref = useRef();
+  const sc = useScroom(ref, {
+    offset: 0.1,
+  });
+
   useEffect(() => {
-    if (ref.current) {
-      const sc = setup({
-        target: ref.current,
-        offset: 0.1,
-      });
+    if (sc) {
       sc.onProgress((progress, el) => {
         const svg = el.querySelector("svg");
         svg.style.transform = `rotate(${progress}turn)`;
       });
     }
-  }, []);
+  }, [sc]);
 
   return (
     <Box

@@ -8,6 +8,7 @@
     "build": "docz build"
   },
   "dependencies": {
+    "@scroom/react": "^0.3.0",
     "docz": "^2.3.1",
     "intersection-observer": "^0.11.0",
     "react": "^16.14.0",

@@ -1,6 +1,6 @@
 ---
 name: Debug
-route: /debug
+route: /debug/
 ---
 
 import { Playground } from "docz";
@@ -29,7 +29,7 @@ debug(sc)
       });
       debug(sc);
       return () => {
-        sc.destory();
+        sc.destroy();
       };
     }, []);
     return <div ref={ref} style={{ height: "300px" }} />;
