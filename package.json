@@ -9,7 +9,6 @@
     "prepublish": "pinst --disable",
     "postpublish": "pinst --enable",
     "bootstrap": "lerna bootstrap",
-    "prepublishOnly": "npm run build",
     "build": "lerna run build --stream",
     "lint": "eslint . --cache --fix --ext .ts,.tsx",
     "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,css}\""

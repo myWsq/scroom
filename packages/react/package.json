@@ -19,6 +19,7 @@
     },
     "sideEffects": false,
     "scripts": {
+        "prepublishOnly": "npm run build",
         "dev": "microbundle watch  -f es,cjs --no-compress",
         "build": "microbundle -f es,cjs --no-compress"
     },

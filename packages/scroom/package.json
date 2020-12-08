@@ -21,6 +21,7 @@
     "module": "dist/scroom.m.js",
     "esmodule": "dist/scroom.modern.js",
     "scripts": {
+        "prepublishOnly": "npm run build",
         "dev": "microbundle watch",
         "build": "microbundle --name Scroom"
     },
