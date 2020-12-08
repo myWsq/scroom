@@ -9,16 +9,17 @@
         "type": "git",
         "url": "https://github.com/myWsq/scroom.git"
     },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "sideEffects": false,
     "source": "main.ts",
     "types": "dist/main.d.ts",
     "main": "dist/scroom.js",
     "umd:main": "dist/scroom.umd.js",
     "module": "dist/scroom.m.js",
     "esmodule": "dist/scroom.modern.js",
-    "publishConfig": {
-        "access": "public",
-        "registry": "https://registry.npmjs.org/"
-    },
     "scripts": {
         "dev": "microbundle watch",
         "build": "microbundle --name Scroom"

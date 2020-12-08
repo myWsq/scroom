@@ -17,6 +17,7 @@
         "access": "public",
         "registry": "https://registry.npmjs.org/"
     },
+    "sideEffects": false,
     "scripts": {
         "dev": "microbundle watch  -f es,cjs --no-compress",
         "build": "microbundle -f es,cjs --no-compress"
