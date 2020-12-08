@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/myWsq/scroom/compare/v0.4.2...v0.5.0) (2020-12-08)
+
+
+### Features
+
+* threshold support  "0" ([be304d2](https://github.com/myWsq/scroom/commit/be304d2747d1024a14e0e96f7e7fb46e4a02ec31))
+
+
+
+
+
 ## [0.4.2](https://github.com/myWsq/scroom/compare/v0.4.1...v0.4.2) (2020-12-08)
 
 

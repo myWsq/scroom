@@ -1,6 +1,6 @@
 {
     "name": "@scroom/react",
-    "version": "0.4.2",
+    "version": "0.5.0",
     "description": "React hooks for scroom.",
     "author": "myWsq <wsq961@outlook.com>",
     "license": "MIT",
@@ -30,7 +30,7 @@
         "typescript": "^3.9.7"
     },
     "dependencies": {
-        "scroom": "^0.4.2"
+        "scroom": "^0.5.0"
     },
     "peerDependencies": {
         "react": ">=16.8.0",
