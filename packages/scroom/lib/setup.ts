@@ -15,6 +15,9 @@ export type DebugCallback = (info: {
 }) => void;
 
 function genRange(start: number, stop: number, step = 1) {
+  if (step <= 0) {
+    return [start];
+  }
   const range = Array(Math.ceil((stop - start) / step))
     .fill(start)
     .map((x, y) => x + y * step);
@@ -37,7 +40,7 @@ export function setup<T extends Element>(options: ScroomOptions<T>) {
   // ---------------------------------------------------------------------------
   const target = options.target;
   const offset = withDefault(options.offset, 0.5);
-  const threshold = withDefault(options.offset, 0.01);
+  const threshold = withDefault(options.threshold, 0.01);
 
   // ---------------------------------------------------------------------------
   // Handling callback
