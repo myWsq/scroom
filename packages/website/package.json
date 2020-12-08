@@ -1,19 +1,19 @@
 {
   "name": "website",
   "private": true,
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": "myWsq <wsq961@outlook.com>",
   "scripts": {
     "dev": "docz dev",
     "build": "docz build"
   },
   "dependencies": {
-    "@scroom/react": "^0.3.0",
+    "@scroom/react": "^0.4.0",
     "docz": "^2.3.1",
     "intersection-observer": "^0.11.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "scroom": "^0.3.0",
+    "scroom": "^0.4.0",
     "theme-ui": "^0.2.52"
   }
 }
