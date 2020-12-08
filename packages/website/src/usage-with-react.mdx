@@ -4,7 +4,7 @@ route: /usage-with-react/
 ---
 
 import { Playground } from "docz";
-import { useScroom } from "@scroom/react";
+import { useScroom, useDebug } from "@scroom/react";
 
 # Usage with React
 
@@ -21,11 +21,19 @@ $ npm install @scroom/react
 ## Usage
 
 ```js
-import { useScroom } from "@scroom/react";
-import { useRef } from "react";
+import { useScroom, useDebug } from "@scroom/react";
+import { useRef, useEffect } from "react";
 function App() {
   const ref = useRef();
   const sc = useScroom(ref);
+  useDebug(sc);
+  useEffect(() => {
+    // can be empty
+    if(sc) {
+      ...
+    }
+  }, [sc])
+
   return <div ref={ref}>...</div>;
 }
 ```
@@ -35,7 +43,14 @@ function App() {
 <Playground>
   {() => {
     const ref = React.useRef();
-    return <div ref={ref}>hello</div>;
+    const sc = useScroom(ref);
+    useDebug(sc)
+    React.useEffect(() => {
+      if(sc) {
+        console.log(sc)
+      }
+    }, [sc])
+    return <div ref={ref} style={{height: '30vh'}}/>;
 }}
 
 </Playground>
