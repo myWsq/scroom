@@ -24,13 +24,20 @@ function genRange(start: number, stop: number, step = 1) {
   return range;
 }
 
+function withDefault<T>(val: T, defaultVal: T extends undefined ? never : T) {
+  if (typeof val === 'undefined') {
+    return defaultVal;
+  }
+  return (val as unknown) as T extends undefined ? never : T;
+}
+
 export function setup<T extends Element>(options: ScroomOptions<T>) {
   // ---------------------------------------------------------------------------
   // Parsing option
   // ---------------------------------------------------------------------------
   const target = options.target;
-  const offset = options.offset || 0.5;
-  const threshold = options.threshold || 0.01;
+  const offset = withDefault(options.offset, 0.5);
+  const threshold = withDefault(options.offset, 0.01);
 
   // ---------------------------------------------------------------------------
   // Handling callback
