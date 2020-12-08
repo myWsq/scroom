@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.2](https://github.com/myWsq/scroom/compare/v0.4.1...v0.4.2) (2020-12-08)
+
+
+### Bug Fixes
+
+* options allow "0" ([d531643](https://github.com/myWsq/scroom/commit/d531643bb1c86b2dd24cfbefe10cce175e12f186))
+
+
+
+
+
 
 
 **Note:** Version bump only for package scroom
