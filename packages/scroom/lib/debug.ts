@@ -21,6 +21,7 @@ export function debug(instance: ScroomInstance, id?: string) {
     width: 100%;
     height: 3px;
     background: repeating-linear-gradient(to right,${color} 0,${color} 1%,transparent 1%,transparent 2%);
+    pointer-events: none;
   `;
 
   mask.style.cssText = `
@@ -34,6 +35,7 @@ export function debug(instance: ScroomInstance, id?: string) {
     color: ${color};
     font-size: 32px;
     overflow: hidden;
+    pointer-events: none;
   `;
 
   document.body.appendChild(offsetLine);
