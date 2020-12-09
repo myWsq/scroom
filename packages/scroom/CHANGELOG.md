@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/myWsq/scroom/compare/v0.5.0...v0.5.1) (2020-12-09)
+
+
+### Bug Fixes
+
+* disable debug mask pointer-events ([fda44d6](https://github.com/myWsq/scroom/commit/fda44d67a5e1e0222e1ef9ea15532308a5ddde77))
+
+
+
+
+
 # [0.5.0](https://github.com/myWsq/scroom/compare/v0.4.2...v0.5.0) (2020-12-08)
 
 
