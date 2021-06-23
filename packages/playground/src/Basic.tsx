@@ -42,7 +42,7 @@ export default function Basic() {
       <div
         ref={ref}
         style={{
-          height: "3000px",
+          height: "300px",
           background: "lightgrey",
         }}
       ></div>
