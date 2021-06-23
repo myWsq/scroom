@@ -1,15 +1,15 @@
 {
   "name": "playground",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "vite"
   },
   "dependencies": {
-    "@scroom/react": "^0.5.1",
+    "@scroom/react": "^1.0.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
-    "scroom": "^0.5.1"
+    "scroom": "^1.0.0"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",
