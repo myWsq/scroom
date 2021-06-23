@@ -11,7 +11,8 @@
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream",
     "lint": "eslint . --cache --fix --ext .ts,.tsx",
-    "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,css}\""
+    "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,css}\"",
+    "version": "lerna version --conventional-commits"
   },
   "lint-staged": {
     "*.{ts,tsx}": "eslint --cache --fix",
