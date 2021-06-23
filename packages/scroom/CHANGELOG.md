@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/myWsq/scroom/compare/v1.0.0...v1.1.0) (2021-06-23)
+
+
+### Features
+
+* comment modity, export debug controller type ([f1a99cc](https://github.com/myWsq/scroom/commit/f1a99cccdf274d48f9ee2411b8976ba369d29b51))
+
+
+
+
+
 ## [0.5.1](https://github.com/myWsq/scroom/compare/v0.5.0...v0.5.1) (2020-12-09)
 
 
