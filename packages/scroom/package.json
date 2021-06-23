@@ -31,6 +31,8 @@
         "typescript": "^3.9.7"
     },
     "dependencies": {
-        "randomcolor": "^0.6.2"
+        "emittery": "^0.9.2",
+        "randomcolor": "^0.6.2",
+        "resize-observer-polyfill": "^1.5.1"
     }
 }
