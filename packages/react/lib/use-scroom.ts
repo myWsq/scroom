@@ -1,33 +1,59 @@
 import { RefObject, useEffect, useState } from "react";
-import { ScroomInstance, ScroomOptions, setup } from "scroom";
+import {
+  ScroomInstance,
+  CreateScroomOptions,
+  createScroom,
+  ScroomEventMap,
+} from "scroom";
 
 export type UseScroomOptions<T extends Element> = Omit<
-  ScroomOptions<T>,
+  CreateScroomOptions<T>,
   "target"
->;
+> & {
+  onProgress?: (e: ScroomEventMap<T>["progress"]) => void;
+  onEnter?: (e: ScroomEventMap<T>["enter"]) => void;
+  onLeave?: (e: ScroomEventMap<T>["leave"]) => void;
+  onDebug?: (e: ScroomEventMap<T>["debug"]) => void;
+};
 
 export function useScroom<T extends Element>(
   ref: RefObject<T>,
-  options?: UseScroomOptions<T>
+  options: UseScroomOptions<T> = {}
 ) {
-  const [sc, setSc] = useState<ScroomInstance>();
-  const offset = options?.offset;
-  const threshold = options?.threshold;
+  const [sc, setSc] = useState<ScroomInstance<T> | null>(null);
 
   useEffect(() => {
     const target = ref.current;
     if (target) {
-      const newSc = setup({
+      const newSc = createScroom({
         target,
-        offset,
-        threshold,
+        ...options,
       });
       setSc(newSc);
+
+      const { onEnter, onLeave, onProgress, onDebug } = options;
+
+      if (onEnter) {
+        newSc.on("enter", onEnter);
+      }
+
+      if (onLeave) {
+        newSc.on("leave", onLeave);
+      }
+
+      if (onProgress) {
+        newSc.on("progress", onProgress);
+      }
+
+      if (onDebug) {
+        newSc.on("debug", onDebug);
+      }
+
       return () => {
         newSc.destroy();
       };
     }
-  }, [ref, offset, threshold]);
+  }, [ref, options.direction, options.offset, options.threshold]);
 
   return sc;
 }

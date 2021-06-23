@@ -1,13 +1,16 @@
 import { useEffect } from "react";
-import { ScroomInstance, debug } from "scroom";
+import { debug, ScroomInstance } from "scroom";
 
-export function useDebug(sc: ScroomInstance) {
+export function useDebug<T extends Element>(
+  sc: ScroomInstance<T> | null,
+  id?: string
+) {
   useEffect(() => {
     if (sc) {
-      const controller = debug(sc);
+      const controller = debug(sc, id);
       return () => {
         controller.destroy();
       };
     }
-  }, [sc]);
+  }, [sc, id]);
 }
