@@ -6,7 +6,7 @@ import { climb, genRange } from './utils';
 export interface CreateScroomOptions<T extends Element> {
   /** target element */
   target: T;
-  /** trigger distance from the top of the viewport. unit: %. range: 0 - 1. default: 0.5 */
+  /** trigger distance from the top/left of the viewport. unit: %. range: 0 - 1. default: 0.5 */
   offset?: number;
   /** scrolling detection frequency threshold. unit: px. default: 4 */
   threshold?: number;

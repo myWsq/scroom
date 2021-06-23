@@ -1,7 +1,11 @@
 import { ScroomEventMap, ScroomInstance } from './setup';
 import randomColor from 'randomcolor';
 
-export function debug<T extends Element>(instance: ScroomInstance<T>, id?: string) {
+export interface ScroomDebugController {
+  destroy: () => void;
+}
+
+export function debug<T extends Element>(instance: ScroomInstance<T>, id?: string): ScroomDebugController {
   const r = (randomColor({
     luminosity: 'dark',
     format: 'rgbArray',
