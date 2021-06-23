@@ -30,15 +30,15 @@ $ npm install scroom
 ## Usage
 
 ```js
-import { setup } from "scroom";
+import { createScroom } from "scroom";
 
-const sc = setup({
+const sc = createScroom({
   target: document.querySelector(".target-element"),
   offset: 0.5,
 });
 
-sc.onProgress((progress) => {
-    ...
+sc.on("progress", (e) => {
+  console.log(e.progress);
 });
 ```
 

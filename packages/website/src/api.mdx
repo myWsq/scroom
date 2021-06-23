@@ -3,63 +3,79 @@ name: API Reference
 route: /api/
 ---
 
-## Options
+## CreateScroomOptions
 
-The options you provided when setup Scroom.
+The options you provided when creating scroom instance.
 
 ```ts
-const sc = setup({
-  target: Element, // Required. Target element to be detected.
-  offset: number, // Default: 0.5 (%). How far from the top of the viewport to detect. (default is middle of sceen)
-  threshold: number // Default: 0.01 (%). Progress step, indicates the frequency of detecting.
-});
+export interface CreateScroomOptions<T extends Element> {
+  /** target element */
+  target: T;
+  /** trigger distance from the top/left of the viewport. unit: %. range: 0 - 1. default: 0.5 */
+  offset?: number;
+  /** scrolling detection frequency threshold. unit: px. default: 4 */
+  threshold?: number;
+  /** scrolling detection direction. default: vertical */
+  direction?: "vertical" | "horizontal";
+}
 ```
 
 <br />
 
-## Methods
+## Props
 
-Methods of Scroom instance.
+Props of scroom instance.
 
 ```ts
-sc.onEnter((el: Element) => void)
+/** scroom instance */
+export interface ScroomInstance<T extends Element> {
+  target: T;
+  /** intersection observer inside this instance */
+  observer: IntersectionObserver;
+  /** add event listener */
+  on: Emittery<ScroomEventMap<T>>["on"];
+  /** add event listener for once */
+  once: Emittery<ScroomEventMap<T>>["once"];
+  /** remove event listener */
+  off: Emittery<ScroomEventMap<T>>["off"];
+  /** destroy instance and remove all event listeners */
+  destroy: () => void;
+}
 ```
 
-Callback that fires when the top or bottom edge of a step element enters the offset threshold.
+## Events
+
+```ts
+sc.on("enter", (data) => void);
+```
+
+Callback that fires when the edge of a step element enters the offset threshold.
 
 **Params**:
 
-- el: Target Element
+- target: Target Element
 
 <br />
 
 ```ts
-sc.onLeave((el: Element) => void)
+sc.on("leave", (data) => void);
 ```
 
-Callback that fires when the top or bottom edge of a step element leaves the offset threshold.
+Callback that fires when edge of a step element leaves the offset threshold.
 
 **Params**:
 
-- el: Target Element
+- target: Target Element
 
 <br />
 
 ```ts
-sc.onProgress((progress: number, el: Element) => void)
+sc.on("progress", (data) => void);
 ```
 
 Callback that fires the progress (0 - 1) a step has made through the threshold.
 
 **Params**:
 
+- target: Target Element
 - progress: The percent of completion of the step (0 - 1)
-- el: Target Element
-
-<br />
-
-```ts
-sc.destroy();
-```
-
-Removes all observers and callback functions.

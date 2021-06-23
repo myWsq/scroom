@@ -25,14 +25,15 @@ import { useScroom, useDebug } from "@scroom/react";
 import { useRef, useEffect } from "react";
 function App() {
   const ref = useRef();
-  const sc = useScroom(ref);
+  const sc = useScroom(ref, {
+    offset: 0.5,
+    onProgress(e) {
+      console.log(e.progress);
+    },
+  });
+
+  // if you want to debug
   useDebug(sc);
-  useEffect(() => {
-    // can be empty
-    if(sc) {
-      ...
-    }
-  }, [sc])
 
   return <div ref={ref}>...</div>;
 }
@@ -43,13 +44,12 @@ function App() {
 <Playground>
   {() => {
     const ref = React.useRef();
-    const sc = useScroom(ref);
+    const sc = useScroom(ref, {
+       onProgress(e) {
+        console.log(e.progress);
+      },
+    });
     useDebug(sc)
-    React.useEffect(() => {
-      if(sc) {
-        console.log(sc)
-      }
-    }, [sc])
     return <div ref={ref} style={{height: '30vh'}}/>;
 }}
 

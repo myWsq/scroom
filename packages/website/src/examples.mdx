@@ -4,7 +4,7 @@ route: /examples/
 ---
 
 import { Playground } from "docz";
-import { setup } from "scroom";
+import { createScroom } from "scroom";
 
 # Examples
 
@@ -19,10 +19,10 @@ Scroom is easy to use, what you achieve is up to your imagination.
     const ref = React.useRef();
     const [colors, setColors] = React.useState([0, 0, 0]);
     React.useEffect(() => {
-      const sc = setup({
+      const sc = createScroom({
         target: ref.current,
       });
-      sc.onProgress((progress) => {
+      sc.on("progress", ({ progress }) => {
         setColors([
           colors[0] + progress * 60,
           colors[1] + progress * 80,
@@ -51,10 +51,10 @@ Scroom is easy to use, what you achieve is up to your imagination.
       transform: "",
     });
     React.useEffect(() => {
-      const sc = setup({
+      const sc = createScroom({
         target: ref.current,
       });
-      sc.onProgress((progress) => {
+      sc.on("progress", ({ progress }) => {
         setStyle({
           radius: style.radius + 300 * progress,
           height: style.height + 150 * progress,

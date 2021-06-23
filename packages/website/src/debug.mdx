@@ -4,16 +4,16 @@ route: /debug/
 ---
 
 import { Playground } from "docz";
-import { setup, debug } from "scroom";
+import { createScroom, debug } from "scroom";
 
 # Debug
 
 The debug tool of Scroom can help you locate the problem quickly.
 
 ```js
-import { setup, debug } from "scroom";
+import { createScroom, debug } from "scroom";
 
-const sc = setup(...);
+const sc = createScroom(...);
 
 debug(sc)
 ```
@@ -24,12 +24,13 @@ debug(sc)
   {() => {
     const ref = React.useRef();
     React.useEffect(() => {
-      const sc = setup({
+      const sc = createScroom({
         target: ref.current,
       });
-      debug(sc);
+      const debugController = debug(sc);
       return () => {
         sc.destroy();
+        debugController.destroy();
       };
     }, []);
     return <div ref={ref} style={{ height: "300px" }} />;
