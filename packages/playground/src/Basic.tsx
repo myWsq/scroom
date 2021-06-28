@@ -7,7 +7,7 @@ export default function Basic() {
     if (ref.current) {
       const sc = createScroom({
         target: ref.current,
-        offset: 0.5,
+        offset: 0.9,
       });
 
       sc.on("enter", () => {
