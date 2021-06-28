@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/myWsq/scroom/compare/v1.1.0...v1.1.1) (2021-06-28)
+
+
+### Bug Fixes
+
+* debug ([a55d044](https://github.com/myWsq/scroom/commit/a55d04442f914d609331107de2a33384958197c9))
+
+
+
+
+
 # [1.1.0](https://github.com/myWsq/scroom/compare/v1.0.0...v1.1.0) (2021-06-23)
 
 
