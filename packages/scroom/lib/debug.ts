@@ -43,7 +43,7 @@ export function debug<T extends Element>(instance: ScroomInstance<T>, id?: strin
           ? `
               left: 0;
               width: 100%;
-              bottom: ${offset * 100}%;
+              bottom: ${(1 - offset) * 100}%;
               color: ${color};
               border-bottom: 1px dashed ${color};
               padding: 5px 20px;
@@ -51,7 +51,7 @@ export function debug<T extends Element>(instance: ScroomInstance<T>, id?: strin
           : `
               top: 0;
               height: 100%;
-              right: ${offset * 100}%;
+              right: ${(1 - offset) * 100}%;
               color: ${color};
               border-right: 1px dashed ${color};
               padding: 20px 5px;
